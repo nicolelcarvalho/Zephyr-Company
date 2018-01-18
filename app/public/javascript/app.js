@@ -65,7 +65,6 @@ $(".brand").on("click", function() {
 
          $(".webContent").append(newDiv);
 
-
         });
     }
 
