@@ -1,0 +1,1 @@
+{"Status":"success","StatusCode":200,"ResultCount":{"Total":1},"Results":[{"Origin":"Known","TrafficSource":"test","Rules":[{"ScoreDeduction":-5,"RuleType":"banned","RuleName":"credit cards (Banned)"}],"Url":"http://www.cnn.com","Brand":"Zephyr Marketplace","Grade":"GOOD","Score":-5.0,"CreationDate":"2014-07-31T22:01:55.457523","Id":2361129}]}

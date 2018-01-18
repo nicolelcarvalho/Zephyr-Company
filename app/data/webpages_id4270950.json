@@ -1,0 +1,1 @@
+{"Status":"success","StatusCode":200,"ResultCount":{"Total":1},"Results":[{"Origin":"Known","TrafficSource":"mark","Rules":[],"Url":"http://www.user:password@file:///etc/passwd","Brand":"Zephyr Marketplace","Grade":"N/A","Score":-101.0,"CreationDate":"2015-10-26T14:54:36.671342","Id":4270950}]}

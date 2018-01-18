@@ -7,6 +7,8 @@ $(".brand").on("click", function() {
   var id = $(this).attr("data-id");
   console.log(id);
 
+  var webPageIds = [];
+
   $.get("/api/" + id, function(data) {
     var webData = JSON.parse(data);
 
@@ -24,46 +26,49 @@ $(".brand").on("click", function() {
     // Loop through the sorted webData and dynamically append the data to the page
     for (var i = 0; i < webData.Results.length; i++) {
      var webId = webData.Results[i].Id;
-     var webUrl = "<a>" + webData.Results[i].Url + "</a>";
+      webPageIds.push(webId);
+    }
 
-     var newDiv = $("<div>").addClass("webPage");
-     var scoreBtn = $("<button class='scoreBtn'>View Scores</button>");
-     scoreBtn.attr("data-id", webId);
+    console.log(webPageIds);
 
-     if(id == 458) {
-      newDiv.addClass("bkgr458");
-     } else if(id == 691) {
-      newDiv.addClass("bkgr691");
-     }
+   }).then(function() { 
+    // then we loop through the array of web pages ids
+    for (var i = 0; i < webPageIds.length; i++) {
+      // get the web page information based on the web id and append it to the page
+       $.get("/api/" + webPageIds[i], function(data) {
+        var obj = JSON.parse(data);
+        var score = obj.Results[0].Score;
+        var lastScored = obj.Results[0].LastScored;
+        var webUrl = obj.Results[0].Url;
+        var id = obj.Results[0].Id;
+        var brand = obj.Results[0].Brand;
 
-     $(newDiv).append("Web Page Id: " + webId + "</br>");
-     $(newDiv).append("URL: " + webUrl + "</br>");
-     $(newDiv).append(scoreBtn);
+         var newDiv = $("<div>").addClass("webPage");
+         newDiv.attr("data-id", webPageIds[i]);
 
-     $(".webContent").append(newDiv);
+         if(brand == "University Zephyr") {
+          newDiv.addClass("bkgr458");
+         } else {
+          newDiv.addClass("bkgr691");
+         }
 
-     // or we could make another ajax request within the loop to obtain each score and last score date
-     // maybe figure out how to make multiple curl requests 
+         $(newDiv).append("Web Page Id: " + id + "</br>");
+         $(newDiv).append("URL: " + webUrl + "</br>");
+         $(newDiv).append("Score: " + score + "</br>");
+         $(newDiv).append("Last Scored: " + lastScored + "</br>");
 
-     // we also have to make an ajax request here to connect the campaign to each item 
-     // test the campaign first to see if we can locate a specific id 
+         $(".webContent").append(newDiv);
+        
+        });
 
-   }
+    }
 
-  });
+});
 
+     
 });
 
 
-// When you click on the View Score button, it gives you the Score, url and last score date for that ID. 
-$(document).on("click", ".scoreBtn", function() {
-
-  var btnId = $(this).attr("data-id");
-  console.log(btnId);
-
-  // perform a get request to get the appropriate data
-
-});
 
 
 }); // end document.ready function
