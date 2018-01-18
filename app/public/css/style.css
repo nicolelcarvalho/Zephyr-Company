@@ -26,6 +26,14 @@ li {
   list-style: none;
 }
 
+a {
+  color: #fff;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
 
 /* MAIN 
 /******************************************************/
@@ -47,8 +55,19 @@ li {
   color: #fff;
 }
 
+.brand-uni:hover {
+  background-color: #fff;
+  color: #772102;
+}
+
+.brand-market:hover {
+  background-color: #fff;
+  color: #02183d;
+}
+
 .bkgr691, .brand-market {
   background-color: #02183d;
   border: 2px solid #02183d;
   color: #fff;
 }
+

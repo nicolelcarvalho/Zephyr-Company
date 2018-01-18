@@ -39,7 +39,7 @@ $(".brand").on("click", function() {
         var obj = JSON.parse(data);
         var score = obj.Results[0].Score;
         var lastScored = obj.Results[0].LastScored;
-        var webUrl = obj.Results[0].Url;
+        var webUrl = "<a>" + obj.Results[0].Url + "</a>";
         var id = obj.Results[0].Id;
         var brand = obj.Results[0].Brand;
 
@@ -53,7 +53,6 @@ $(".brand").on("click", function() {
          }
 
          $(newDiv).append("<p class='pageId'>Web Page Id: " + id + "</p>");
-         $(newDiv).append("<p class='url'>URL: " + webUrl + "</p");
          $(newDiv).append("<p class='score'>Score: " + score + "</p>");
 
          if(lastScored !== undefined) {
@@ -61,6 +60,8 @@ $(".brand").on("click", function() {
          } else {
            $(newDiv).append("<p class='lastScore'>Last Scored: Date has not been provided.</p>");
          }
+
+         $(newDiv).append("<p class='url'>URL: " + webUrl + "</p");
 
          $(".webContent").append(newDiv);
 
