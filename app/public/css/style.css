@@ -1,0 +1,49 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: Arial, san-serif;
+  color: #245588;
+  line-height: 1.75;
+  padding: 20px;
+}
+
+
+
+/* MAIN 
+/******************************************************/
+
+.webPage {
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.content {
+  margin-top: 40px;
+}
+
+.bkgr458 {
+  background-color: orange;
+}
+
+.bkgr691 {
+  background-color: blue;
+}
+
+.scoreBtn {
+  margin-top: 10px;
+}
