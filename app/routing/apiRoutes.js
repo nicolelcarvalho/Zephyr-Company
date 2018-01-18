@@ -47,9 +47,7 @@ module.exports = function(app) {
 	// });
 
 	app.get("/api/:id", function(req, res) {
-		console.log("route hit");
 		var id = req.params.id;
-		console.log(id);
 		fs.readFile("./app/data/webpages_id" + id + ".json", "utf8", function(err, data) {
 
 			res.send(data);

@@ -43,7 +43,7 @@ $(".brand").on("click", function() {
         var id = obj.Results[0].Id;
         var brand = obj.Results[0].Brand;
 
-         var newDiv = $("<div>").addClass("webPage");
+         var newDiv = $("<li>").addClass("webPage");
          newDiv.attr("data-id", webPageIds[i]);
 
          if(brand == "University Zephyr") {
@@ -52,22 +52,25 @@ $(".brand").on("click", function() {
           newDiv.addClass("bkgr691");
          }
 
-         $(newDiv).append("Web Page Id: " + id + "</br>");
-         $(newDiv).append("URL: " + webUrl + "</br>");
-         $(newDiv).append("Score: " + score + "</br>");
-         $(newDiv).append("Last Scored: " + lastScored + "</br>");
+         $(newDiv).append("<p class='pageId'>Web Page Id: " + id + "</p>");
+         $(newDiv).append("<p class='url'>URL: " + webUrl + "</p");
+         $(newDiv).append("<p class='score'>Score: " + score + "</p>");
+
+         if(lastScored !== undefined) {
+            $(newDiv).append("<p class='lastScore'>Last Scored: " + lastScored + "</p>");
+         } else {
+           $(newDiv).append("<p class='lastScore'>Last Scored: Date has not been provided.</p>");
+         }
 
          $(".webContent").append(newDiv);
-        
-        });
 
+
+        });
     }
 
-});
+  })
 
-     
 });
-
 
 
 

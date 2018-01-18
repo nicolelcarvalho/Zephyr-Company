@@ -18,8 +18,13 @@ body {
   color: #245588;
   line-height: 1.75;
   padding: 20px;
+  font-weight: 100;
 }
 
+
+li {
+  list-style: none;
+}
 
 
 /* MAIN 
@@ -27,23 +32,23 @@ body {
 
 .webPage {
   padding: 20px;
-  border: 2px solid #000;
   border-radius: 5px;
   margin-top: 10px;
 }
 
-.content {
+.webContent {
   margin-top: 40px;
+  margin-left: -40px;
 }
 
-.bkgr458 {
-  background-color: orange;
+.bkgr458, .brand-uni {
+  background-color: #772102;
+  border: 2px solid #772102;
+  color: #fff;
 }
 
-.bkgr691 {
-  background-color: blue;
-}
-
-.scoreBtn {
-  margin-top: 10px;
+.bkgr691, .brand-market {
+  background-color: #02183d;
+  border: 2px solid #02183d;
+  color: #fff;
 }
